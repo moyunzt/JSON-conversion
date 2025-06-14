@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON/YAML 转换工具</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>JSON/YAML 转换工具</h1>
+            <p>在JSON和YAML格式之间轻松转换，支持格式化、键排序和注释处理</p>
+        </header>
+
+        <div class="converter">
+            <div class="input-section">
+                <div class="format-selector">
+                    <label for="input-format">输入格式：</label>
+                    <select id="input-format">
+                        <option value="json">JSON</option>
+                        <option value="yaml">YAML</option>
+                        <option value="toml">TOML</option>
+                        <option value="xml">XML</option>
+                    </select>
+                </div>
+                <textarea id="input-text" placeholder="在此粘贴您的JSON或YAML代码..."></textarea>
+            </div>
+
+            <div class="controls">
+                <button id="convert-btn">转换 &rarr;</button>
+                <div class="options">
+                    <label><input type="checkbox" id="format-output" checked> 格式化输出</label>
+                    <label><input type="checkbox" id="sort-keys"> 键排序</label>
+                    <label><input type="checkbox" id="preserve-comments"> 保留注释</label>
+                </div>
+            </div>
+
+            <div class="output-section">
+                <div class="format-selector">
+                    <label for="output-format">输出格式：</label>
+                    <select id="output-format">
+                        <option value="json">JSON</option>
+                        <option value="yaml">YAML</option>
+                        <option value="toml">TOML</option>
+                        <option value="xml">XML</option>
+                    </select>
+                </div>
+                <textarea id="output-text" placeholder="转换后的结果将显示在这里..." readonly></textarea>
+                <div class="output-controls">
+                    <button id="copy-btn">复制</button>
+                    <button id="download-btn">下载</button>
+                    <button id="clear-btn">清除</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-section">
+            <div class="usage-info">
+                <h2>使用说明</h2>
+                <ol>
+                    <li>选择输入格式（JSON或YAML）</li>
+                    <li>粘贴您的代码到输入框</li>
+                    <li>选择输出格式</li>
+                    <li>设置所需选项</li>
+                    <li>点击"转换"按钮</li>
+                </ol>
+            </div>
+            <div class="about-info">
+                <h2>关于</h2>
+                <p>这个工具使用纯前端技术（HTML, CSS, JavaScript）构建，无需后端服务器。所有转换都在您的浏览器中本地完成，不会上传您的数据。</p>
+                <p>支持的格式：</p>
+                <ul>
+                    <li>JSON - JavaScript Object Notation</li>
+                    <li>YAML - YAML Ain't Markup Language</li>
+                    <li>TOML - Tom's Obvious, Minimal Language</li>
+                    <li>XML - Extensible Markup Language</li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 @魔云杂谈 JSON/YAML 转换工具 | <a href="#" id="github-link">GitHub</a></p>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toml/3.0.0/toml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fast-xml-parser/4.2.2/fxparser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
